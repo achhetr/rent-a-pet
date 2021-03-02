@@ -6,4 +6,5 @@
   <p><%= @pet.image_url %></p>
   <p><%= @pet.user.email %></p>
   <p>$ <%= @pet.price %></p>
+  <%= link_to 'DELETE ME', pet_path, method: :delete %>
 </div>

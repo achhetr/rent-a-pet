@@ -5,9 +5,12 @@ class PetsController < ApplicationController
   end
     
   def destroy
-    @pets = Pets.find(parmas[:pet_id])
-    @pets.destroy
-    redirect_to pets_path
+    @pets = Pet.find(params[:id])
+    if @pets.destroy
+      redirect_to pets_path
+    else
+      render pets_path 
+    end
   end
 
   def edit
