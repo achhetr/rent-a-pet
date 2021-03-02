@@ -69,3 +69,4 @@ gem 'simple_form'
 # Faker
 gem 'faker'
 
+gem 'dotenv-rails', groups: [:development, :test]
