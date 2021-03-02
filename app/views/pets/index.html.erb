@@ -1,20 +1,18 @@
 <div class="container">
-<h1 class"text-center">RENT-A-PET</h1>
-	<%= simple_form %>
-    <div>
-    <div class="pet_cards">
-			<ul>
-				<li><% @pets.each do |pet|  %>
+	<h1 class="text-center">RENT-A-PET</h1>
+	<%= link_to 'Add Pet', new_pet_path %>
+	<div class="pet_cards">
+		<ul>
+			<% @pets.each do |pet|  %>
+				<li>
 					<h1><%= pet.name %></h1>
-					<p><%= pet.description %></p>
-					<p><%= pet.description %></p>
-					<p><%= pet.type %></p>
-					<p><%= pet.image_url %></p>
-					<p><%= pet.user %></p>
+					# <p><%= pet.description %></p>
+					# <p><%= pet.type %></p>
+					# <p><%= pet.image_url %></p>
+					<p><%= pet.user.email %></p>
 					<p>$ <%= pet.price %></p>
-				</li>
-			</ul>
-    </div>
-    <%= link_to "show", show_pets_path %>
-    </div>
+				</li>	
+			<% end %>
+		</ul>
+	</div>
 </div>
