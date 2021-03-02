@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-<<<<<<< HEAD
+
 
   def edit
     @pet = Pet.find(params[:id])
@@ -11,7 +11,6 @@ class PetsController < ApplicationController
     redirect_to pet_path(@pet)
   end
   
-=======
   def new
     @pet = Pet.new
   end
@@ -34,5 +33,5 @@ class PetsController < ApplicationController
   def pet_params
     params.require(:pet).permit(:name, :description, :type, :image_url, :price)
   end
->>>>>>> amanda
+  
 end
