@@ -30,7 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
-gem 'simple_form'
+
 
 group :development, :test do
   gem 'pry-byebug'
