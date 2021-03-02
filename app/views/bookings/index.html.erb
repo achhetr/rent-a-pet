@@ -2,11 +2,11 @@
 <ul>
   <% @bookings.each do |booking| %>
     <li>
-      <p>booking.user.name</p>
-      <p>booking.pet.name</p>
-      <p>booking.start_time</p>
-      <p>booking.end_time</p>
-      <p>booking.total_price</p>
+      <p><%= booking.user.name %></p>
+      <p><%= booking.pet.name %></p>
+      <p><%= booking.start_time %></p>
+      <p><%= booking.end_time %></p>
+      <p><%= booking.total_price %></p>
     </li>
   <% end %>  
 </ul>
