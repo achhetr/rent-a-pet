@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
-  before_action :set_cocktail, only: [:create, :new]
+  before_action :set_booking, only: [:create, :new]
 
   def def new
     @booking = Booking.new
+    @user = Pet.find(rand(1..5))
   end
 
   def create
@@ -16,11 +17,11 @@ class BookingsController < ApplicationController
   end
 
   def set_booking
-    @booking = Pet.find(params[:pet_id])
+    @pet = Pet.find(params[:pet_id])
   end
 
   def booking_params
-    params.require(:booking).permit(:start_time, :end_time, :total_price, :user_id, :pet_id)
+    params.require(:booking).permit(:start_time, :end_time, :total_price)
   end
   
 end
