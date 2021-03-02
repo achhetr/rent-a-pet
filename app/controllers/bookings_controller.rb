@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def def new
+  def new
     @booking = Booking.new
     @user = Pet.find(rand(1..5))
   end
