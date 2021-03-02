@@ -6,6 +6,6 @@ class User < ApplicationRecord
   has_many :pets, dependent: :destroy
   has_many :bookings
 
-  # validates :name, presence: true
-  # validates :location, presence: true
+  validates :name, presence: true
+  validates :location, presence: true
 end
