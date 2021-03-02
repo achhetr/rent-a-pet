@@ -64,4 +64,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Devise
 gem 'devise'
+# Simple form fo
+gem 'simple_form'
+# Faker
+gem 'faker'
 
