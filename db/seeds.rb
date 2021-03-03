@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # 5 USER
-5.times do
-  User.create(email: Faker::Internet.email, name: Faker::Name.name, location: Faker::Address.city, password: Faker::Alphanumeric.alpha(number: 10))
-end
+# 5.times do
+#   User.create(email: Faker::Internet.email, name: Faker::Name.name, location: Faker::Address.city, password: Faker::Alphanumeric.alpha(number: 10))
+# end
 
 # 20 Pets
 20.times do 
@@ -19,7 +19,7 @@ end
     description: Faker::Alphanumeric.alpha(number: 50), 
     image_url: Faker::Alphanumeric.alpha(number: 10), 
     price: rand(6..100),
-    user_id: rand(1..5)
+    user_id: rand(1..User.count)
   }
   Pet.create(hash)
 end
