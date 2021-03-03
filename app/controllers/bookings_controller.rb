@@ -15,9 +15,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @user = User.find(rand(1..5))
     @booking.pet = @pet
-    @booking.user = @user
+    @booking.user = current_user
     if @booking.save
       redirect_to pet_path(@pet)
     else
