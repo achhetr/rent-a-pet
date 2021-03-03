@@ -6,8 +6,11 @@
   <p><strong>Pet owner email</strong> <%= @pet.user.email %></p>
   <p><strong>Price</strong> $ <%= @pet.price %></p>
   <div>
-    <%= link_to 'DELETE ME', pet_path, method: :delete, data: {confirm: "Are you sure? :'("} %>
-    <%= link_to 'EDIT ME', edit_pet_path %>
-    <%= link_to 'Add Booking', new_pet_booking_path(@pet) %>
+    
+    <% if current_user.id == @pet.user.id %>
+      <%= link_to 'DELETE ME', pet_path, method: :delete, data: {confirm: "Are you sure? :'("} %>
+      <%= link_to 'EDIT ME', edit_pet_path %>      
+    <% end %>
+    <%= link_to 'ADD BOOKING', new_pet_booking_path(@pet) %>
   </div>
 </div>
