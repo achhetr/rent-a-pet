@@ -1,4 +1,4 @@
-<div class="container"><h1>Dashboard</h1></div>
+<div class="container"><h1><strong><%= current_user.email.split("@")[0].upcase%></strong> Dashboard</h1></div>
 <div id="exTab1" class="container">	
 <ul  class="nav nav-pills">
 			<li class="active">
@@ -12,7 +12,6 @@
 			<div class="tab-content clearfix">
 			  <div class="tab-pane active" id="1a">
           <% @my_bookings.each do |booking|%>
-            <p><%= booking.user.email%></p>
             <p>Pet: <%= booking.pet.name%></p>
             <p>Start: <%= booking.start_time%></p>
             <p>End: <%= booking.end_time%></p>
@@ -21,7 +20,10 @@
 				</div>
 				<div class="tab-pane" id="2a">
           <% @pets.each do |pet|%>
-            <p>Pet: <%= pet.name%></p>
+            <p>Pet: 
+							<%= link_to pet_path(pet.id) do %>
+								<%= pet.name%></p>
+							<% end %>
 					<% end %>
 				</div>
         <div class="tab-pane" id="3a">
