@@ -68,8 +68,7 @@ gem 'devise'
 gem 'simple_form'
 # Faker
 gem 'faker'
-
-
-
-
+# Cloudinary
 gem 'cloudinary', '~> 1.16.0'
+# Dot ENV DEV || PROD
+gem 'dotenv-rails', groups: [:development, :test]
