@@ -21,4 +21,11 @@
 		justify-content: space-around;
 		align-items: center;
 	}
+	.profile_img {
+		width: 64px;
+		height: 64px;
+		border-radius: 50%;
+		overflow: hidden;
+		background-image: cover;
+	}
 }
