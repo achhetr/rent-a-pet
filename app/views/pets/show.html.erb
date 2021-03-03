@@ -7,7 +7,7 @@
   <p><%= @pet.user.email %></p>
   <p>$ <%= @pet.price %></p>
   <div>
-    <%= link_to 'DELETE ME', pet_path, method: :delete %>
+    <%= link_to 'DELETE ME', pet_path, method: :delete, data: {confirm: "Are you sure? :'("} %>
     <%= link_to 'EDIT ME', edit_pet_path %>
     <%= link_to 'Add Booking', new_pet_booking_path(@pet) %>
   </div>
