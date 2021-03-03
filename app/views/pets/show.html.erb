@@ -3,6 +3,7 @@
   <p><strong>Descriptions:</strong> <%= @pet.description %></p>
   <p><strong>Animal Type</strong> <%= @pet.pet_type %></p>
   <p><strong>Image URL</strong> <%= @pet.image_url %></p>
+  <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill, class: "img-thumbnail" %>
   <p><strong>Pet owner email</strong> <%= @pet.user.email %></p>
   <p><strong>Price</strong> $ <%= @pet.price %></p>
   <div>
