@@ -7,8 +7,13 @@
       <li><%= link_to 'Home', root_path %></li>
       <li><%= link_to 'Booking', bookings_path %></li>
       <li><%= link_to 'Pets', pets_path %></li>
-      <li><%= link_to 'Sign In', pets_path %></li>
-      <li><%= link_to 'Sign Out', root_path %></li>
+      <li>
+        <% if user_signed_in? %>
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Sign In', user_session_path %>
+        <% end %>
+      </li>
     </ul>
   </div>
 </div>
