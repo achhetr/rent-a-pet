@@ -5,6 +5,7 @@
       <div class="border d-flex flex-column w-50 align-items-center my-4 p-3">
         <p><strong>Booked by: </strong><%= booking.user.email %></p>
         <p><strong>Ordered pet: </strong><%= booking.pet.name %></p>
+        <p><strong>Owned by: </strong><%= booking.pet.user.email.split("@").first.upcase %></p>
         <p><strong>Start date: </strong><%= booking.start_time.strftime("%Y-%m-%d") %></p>
         <p><strong>End date: </strong><%= booking.end_time.strftime("%Y-%m-%d") %></p>
         <p><strong>Total Price: </strong><%= booking.total_price %></p>    
