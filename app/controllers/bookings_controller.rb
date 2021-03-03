@@ -33,6 +33,8 @@ class BookingsController < ApplicationController
     end
   end
 
+  private
+
   def set_booking
     @pet = Pet.find(params[:pet_id])
   end

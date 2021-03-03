@@ -27,6 +27,9 @@
 					<% end %>
 				</div>
 				<div class="tab-pane" id="2a">
+				  <div class = "my-4 pt-3">
+				    <%= link_to 'Add-A-Pet', new_pet_path %>
+				  </div>
           <% @pets.each do |pet|%>
             <p>Pet: 
 							<%= link_to pet_path(pet.id) do %>
@@ -36,10 +39,13 @@
 				</div>
         <div class="tab-pane" id="3a">
           <% @booking_offers.each do |offer|%>
-            <p>Renting pet <%= offer.pet.name%></p>
-						<p>Start date <%= offer.start_time.strftime("%Y-%m-%d")%></p></p>
-            <p>To User: <%= offer.user.email%></p>
-            <p>Total amount: <%= offer.total_price%></p>
+						<div class="border d-flex flex-column w-50 tex-left my-4 pl-5 pt-3">
+							<p>Renting pet: <%= offer.pet.name%></p>
+							<p>Start date: <%= offer.start_time.strftime("%Y-%m-%d")%></p>
+							<p>End date: <%= offer.end_time.strftime("%Y-%m-%d")%></p>
+							<p>To User: <%= offer.user.email%></p>
+							<p>Total amount: <%= offer.total_price%></p>
+						</div>
 					<% end %>
 				</div>
 			</div>
