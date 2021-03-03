@@ -4,5 +4,5 @@ class Booking < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, presence: true
   validates :user_id, presence: true
-  validates :pet_id, presence: true, uniqueness: {scope: :pet_id}
+  validates :pet_id, presence: true, uniqueness: {scope: :user_id}
 end
