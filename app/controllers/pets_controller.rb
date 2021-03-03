@@ -29,7 +29,7 @@ class PetsController < ApplicationController
   
   def create
     @pet = Pet.new(pet_params)
-    @pet.user_id = 1
+    @pet.user_id = current_user.id
     if @pet.save
       redirect_to pets_path
     else
