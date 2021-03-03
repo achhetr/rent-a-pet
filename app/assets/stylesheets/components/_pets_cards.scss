@@ -1,3 +1,53 @@
 .col-md-4 img {
-    background-image: cover;
+    // width: 80%;
+    // height: 24vw;
+    // object-fit: cover;
+    // border-radius: 16px;
+    // padding-top: 6px;
+    // padding-bottom: 6px;
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 16px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: 10px;
+}
+.card-text {
+    text-align: right;
+    display: flex;
+    // position: absolute;
+    right: 6px;
+    bottom: 10px;
+    font-size: larger;
+    font-weight: 400;
+    text-align: right;
+    display: flex;
+    right: 6px;
+    bottom: 10px;
+    font-size: larger;
+    font-weight: 400;
+}
+.card-title {
+    font-weight: 600;
+    letter-spacing: 0.075rem;
+    margin-bottom: 0;
+}
+.card mb-3 {
+    width: 600px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 2px;
+}
+.text-muted {
+    position: absolute;
+    bottom: 38px;
+    right: 20px;
+    color: #00c4cc;
+}
+.row g-0 {
+    border-radius: 15px;
+}
+.card {
+    border-radius: 15px;
 }
