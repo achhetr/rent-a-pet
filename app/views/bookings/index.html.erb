@@ -2,7 +2,7 @@
 <ul>
   <% @bookings.each do |booking| %>
     <li>
-      <p><%= booking.user.name %></p>
+      <p><%= booking.user.email %></p>
       <p><%= booking.pet.name %></p>
       <p><%= booking.start_time %></p>
       <p><%= booking.end_time %></p>
