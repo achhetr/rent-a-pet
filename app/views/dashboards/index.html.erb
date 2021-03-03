@@ -34,6 +34,7 @@
         <div class="tab-pane" id="3a">
           <% @booking_offers.each do |offer|%>
             <p>Renting pet <%= offer.pet.name%></p>
+						<p>Start date <%= offer.start_time%></p></p>
             <p>To User: <%= offer.user.email%></p>
             <p>Total amount: <%= offer.total_price%></p>
 					<% end %>
