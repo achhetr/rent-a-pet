@@ -15,7 +15,7 @@
 20.times do 
   hash = {
     name: Faker::Name.name, 
-    pet_type: Faker::Creature::Animal, 
+    pet_type: ["Dog", "Cat"].sample, 
     description: Faker::Alphanumeric.alpha(number: 50), 
     image_url: Faker::Alphanumeric.alpha(number: 10), 
     price: rand(6..100),
