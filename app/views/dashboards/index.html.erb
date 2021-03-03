@@ -12,10 +12,14 @@
 			<div class="tab-content clearfix">
 			  <div class="tab-pane active" id="1a">
           <% @my_bookings.each do |booking|%>
-            <p>Pet: <%= booking.pet.name%></p>
-            <p>Start: <%= booking.start_time%></p>
-            <p>End: <%= booking.end_time%></p>
-            <p>Total price: <%= booking.total_price%></p>
+						<%= link_to booking_path(booking.id) do %>
+							<div class="border d-flex flex-column w-50 align-items-center my-4 pt-3">
+								<p>Pet: <%= booking.pet.name%></p>
+								<p>Start: <%= booking.start_time%></p>
+								<p>End: <%= booking.end_time%></p>
+								<p>Total price: <%= booking.total_price%></p>
+							</div>
+						<% end %>
 					<% end %>
 				</div>
 				<div class="tab-pane" id="2a">
