@@ -1,9 +1,12 @@
 <div class="container_home">
-	<div class="banner">
-	</div>
-		<h1>Landing page</h1>
-		<div class="try_button"><button type="button" id="front_button" class="btn btn-primary btn-lg">Try Us Now</button></div>
-		<%= link_to 'List of Pets', pets_path %>
+	<div class="banner"></div>
+	<h1>Rent a Pet today :)</h1>
+	
+	<% unless  user_signed_in? %>
+		<div class="try_button">
+			<%= link_to 'Try Us Now', new_user_registration_path, class: "btn btn-primary btn-lg", id: "front_button" %>
+		</div>
+	<% end %>
 
 	<div class="row display:flex justify-content:space-between">
 		<div class="card" id="cards" style="width: 18rem;">
