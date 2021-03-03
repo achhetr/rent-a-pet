@@ -19,6 +19,9 @@
 								<p>Start: <%= booking.start_time.strftime("%Y-%m-%d")%></p>
 								<p>End: <%= booking.end_time.strftime("%Y-%m-%d")%></p>
 								<p>Total price: <%= booking.total_price%></p>
+								<div class="py-1">
+									<%= link_to 'Delete', booking_path, method: :delete, data: {confirm: "Are you sure? :'("}, class: "btn btn-primary" %>
+								</div>
 							</div>
 						<% end %>
 					<% end %>

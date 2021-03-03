@@ -24,6 +24,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+  end
+
   def set_booking
     @pet = Pet.find(params[:pet_id])
   end
