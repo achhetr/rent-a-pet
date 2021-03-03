@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_034512) do
+ActiveRecord::Schema.define(version: 2021_03_03_103124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(version: 2021_03_03_034512) do
     t.string "name"
     t.text "description"
     t.string "pet_type"
-    t.string "image_url"
     t.integer "price"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -71,7 +70,6 @@ ActiveRecord::Schema.define(version: 2021_03_03_034512) do
     t.string "name"
     t.string "mobile"
     t.string "location"
-    t.string "image_url"
     t.boolean "has_pet"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

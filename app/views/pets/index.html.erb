@@ -11,7 +11,6 @@
 						<% end %>
 						<p><strong>Description</strong> <%= pet.description %></p>
 						<p><strong>Pet Type</strong> <%= pet.pet_type %></p>
-						<p><strong>Image URL</strong> <%= pet.image_url %></p>
 						<p><strong>Owner</strong> <%= pet.user.email.split("@").first.upcase %></p>
 						<p><strong>Price</strong> $ <%= pet.price %> per day</p>
 					</div>
