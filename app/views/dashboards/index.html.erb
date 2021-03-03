@@ -11,14 +11,25 @@
   	</ul>
 			<div class="tab-content clearfix">
 			  <div class="tab-pane active" id="1a">
-            <%= @my_bookings%>
-
+          <% @my_bookings.each do |booking|%>
+            <p><%= booking.user.email%></p>
+            <p>Pet: <%= booking.pet.name%></p>
+            <p>Start: <%= booking.start_time%></p>
+            <p>End: <%= booking.end_time%></p>
+            <p>Total price: <%= booking.total_price%></p>
+					<% end %>
 				</div>
 				<div class="tab-pane" id="2a">
-          <%= @pets %>
+          <% @pets.each do |pet|%>
+            <p>Pet: <%= pet.name%></p>
+					<% end %>
 				</div>
         <div class="tab-pane" id="3a">
-          <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
+          <% @booking_offers.each do |offer|%>
+            <p>Renting pet <%= offer.pet.name%></p>
+            <p>To User: <%= offer.user.name%></p>
+            <p>Total amount: <%= offer.total_price%></p>
+					<% end %>
 				</div>
 			</div>
   </div>
