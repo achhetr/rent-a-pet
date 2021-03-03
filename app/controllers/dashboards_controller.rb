@@ -1,9 +1,9 @@
 class DashboardsController < ApplicationController
 
   def index
-    @user = current_user 
-    @pets = Pet.where(user_id = @user :id)
-    @bookings = Booking.where(user_id = @user :id)
+    @pets = current_user.pets
+    @booking_offers = current_user.bookings
+    @my_bookings = Booking.where(user_id: current_user.id)
   end
 
 end
