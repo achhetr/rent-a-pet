@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.pet = @pet
     @booking.user = current_user
     if @booking.save
-      redirect_to pet_path(@pet)
+      redirect_to dashboards_path
     else
       render :new
     end

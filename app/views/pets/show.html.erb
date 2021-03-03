@@ -1,11 +1,10 @@
 <div class="container">
-  <h1><%= @pet.name %></h1>
-  <p><%= @pet.description %></p>
-  <p><%= @pet.description %></p>
-  <p><%= @pet.pet_type %></p>
-  <p><%= @pet.image_url %></p>
-  <p><%= @pet.user.email %></p>
-  <p>$ <%= @pet.price %></p>
+  <h1><strong>Pet Name</strong> <%= @pet.name %></h1>
+  <p><strong>Descriptions:</strong> <%= @pet.description %></p>
+  <p><strong>Animal Type</strong> <%= @pet.pet_type %></p>
+  <p><strong>Image URL</strong> <%= @pet.image_url %></p>
+  <p><strong>Pet owner email</strong> <%= @pet.user.email %></p>
+  <p><strong>Price</strong> $ <%= @pet.price %></p>
   <div>
     <%= link_to 'DELETE ME', pet_path, method: :delete, data: {confirm: "Are you sure? :'("} %>
     <%= link_to 'EDIT ME', edit_pet_path %>

@@ -16,8 +16,8 @@
 							<div class="border d-flex flex-column w-50 align-items-center my-4 pt-3">
 								<p>User Email: <%= booking.pet.user.email%></p>
 								<p>Pet: <%= booking.pet.name%></p>
-								<p>Start: <%= booking.start_time%></p>
-								<p>End: <%= booking.end_time%></p>
+								<p>Start: <%= booking.start_time.strftime("%Y-%m-%d")%></p>
+								<p>End: <%= booking.end_time.strftime("%Y-%m-%d")%></p>
 								<p>Total price: <%= booking.total_price%></p>
 							</div>
 						<% end %>
