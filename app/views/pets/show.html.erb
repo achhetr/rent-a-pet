@@ -10,7 +10,8 @@
     <% if current_user.id == @pet.user.id %>
       <%= link_to 'DELETE ME', pet_path, method: :delete, data: {confirm: "Are you sure? :'("} %>
       <%= link_to 'EDIT ME', edit_pet_path %>      
+    <% else %>
+      <%= link_to 'ADD BOOKING', new_pet_booking_path(@pet) %>
     <% end %>
-    <%= link_to 'ADD BOOKING', new_pet_booking_path(@pet) %>
   </div>
 </div>
