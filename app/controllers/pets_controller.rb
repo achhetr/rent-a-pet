@@ -1,10 +1,9 @@
 class PetsController < ApplicationController
 
   def index
-    if params.has_key?(:location)
+    if params[:location].nil?
       @pets = Pet.all
     else
-      parse
       @pets = []
       @users = User.near("#{params[:location]}, Australia", params[:distance].to_i)
       @users.each do |user|
