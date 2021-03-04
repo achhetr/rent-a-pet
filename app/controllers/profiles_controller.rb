@@ -2,8 +2,9 @@ class ProfilesController < ApplicationController
   def edit
     @user = current_user
   end
+
   def update
-    @user.update(pet_params) 
+    current_user.update(user_params) 
     redirect_to root_path
   end
 
