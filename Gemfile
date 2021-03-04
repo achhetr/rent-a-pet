@@ -72,3 +72,5 @@ gem 'faker'
 gem 'cloudinary', '~> 1.16.0'
 # Dot ENV DEV || PROD
 gem 'dotenv-rails', groups: [:development, :test]
+# Geocoder
+gem 'geocoder'

@@ -9,15 +9,19 @@
       <li></li>
       <li><%= link_to 'Dashboard', dashboards_path %></li>
       <li>
-        <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= current_user.email.split('@').first.upcase %>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <%= link_to 'Profile', pets_path, class: "dropdown-item" %>
-            <%= link_to 'Bookings', bookings_path, class: "dropdown-item" %>
+        
+        <% if user_signed_in? %>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= current_user.email.split('@').first.upcase %>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <%= link_to 'Profile', edit_profile_path(current_user.id), class: "dropdown-item" %>
+              <%= link_to 'Settings', edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to 'Bookings', bookings_path, class: "dropdown-item" %>
+            </div>
           </div>
-        </div>
+        <% end %>
       </li>
       <li>
         <% if user_signed_in? %>
