@@ -45,7 +45,7 @@
 				<p>Total amount: <%= offer.total_price%></p>
 				
 				<% if offer.offer_accepted %>
-					<strong>ACCEPTED</strong>
+					<strong>ACCEPTED <%= link_to 'Change', booking_path(offer.id), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %></strong>
 				<% else %>
 				<div>
 					<%= link_to 'Accept', booking_path(offer.id), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn-success" %>
