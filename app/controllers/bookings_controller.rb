@@ -41,7 +41,7 @@ class BookingsController < ApplicationController
     end_time = booking_params[:end_time]
     start_time_booking = start_time.to_date
     end_time_booking = end_time.to_date
-    (end_time_booking - start_time_booking).to_i * @pet.price
+    ((end_time_booking - start_time_booking).to_i + 1) * @pet.price
   end
 
   def set_booking

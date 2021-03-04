@@ -2,9 +2,8 @@
 <p><%= @pet.name %></p>
 
 <%= simple_form_for [@pet, @booking] do |f| %>
-  <%= f.input :start_time, as: :date, html5: true %>
+  <%= f.input :start_time, as: :date, min: Date.today, html5: true %>
   <%= f.input :end_time, as: :date, html5: true %>
-  <%# <%= f.input :total_price %>
   <p><strong>Price per day: $ <%= @pet.price %> </p> 
   <%= f.button :submit %>
 <% end %>
