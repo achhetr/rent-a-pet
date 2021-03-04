@@ -11,7 +11,7 @@
       <li>
         <div class="dropdown">
           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= current_user.email.split('@').first.upcase %>
+            <%= current_user.email.split('@').first.upcase if user_signed_in?%>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <%= link_to 'Profile', pets_path, class: "dropdown-item" %>
