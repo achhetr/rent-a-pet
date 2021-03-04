@@ -4,7 +4,6 @@ class PetsController < ApplicationController
     if params.has_key?(:location)
       @pets = Pet.all
     else
-      parse
       @pets = []
       @users = User.near("#{params[:location]}, Australia", params[:distance].to_i)
       @users.each do |user|

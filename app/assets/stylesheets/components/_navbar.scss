@@ -25,10 +25,14 @@
 			padding: 4px;
 		}
 	}
+	.img-profile  {
+		border-radius: 50%;
+
+
+	}
 	.profile_img {
 		width: 64px;
-		height: 64px;
-		border-radius: 50%;
+		height: 64px; 
 		overflow: hidden;
 		background-image: cover;
 	}
