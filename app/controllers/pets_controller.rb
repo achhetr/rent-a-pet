@@ -12,6 +12,10 @@ class PetsController < ApplicationController
       @pets.flatten!
     end         
   end
+
+  def query
+    parse
+  end
     
   def destroy
     @pets = Pet.find(params[:id])
