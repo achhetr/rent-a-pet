@@ -10,7 +10,14 @@ class PetsController < ApplicationController
         @pets << Pet.where(id: user.id)
       end
       @pets.flatten!
-    end         
+      @markers = @users.geocoded.map do |user|
+        {
+          lat: pet.user.latitude,
+          lng: pet.user.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { pet: pet })
+        }
+      end  
+    end     
   end
 
   def query

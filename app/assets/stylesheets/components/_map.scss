@@ -1,0 +1,25 @@
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main_container {
+  display: flex;
+}
+#map {
+  /* width: 100%; */
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.pet_cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  flex-grow: 1;
+}
