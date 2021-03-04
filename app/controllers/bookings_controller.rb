@@ -24,6 +24,13 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.offer_accepted = true
+    @booking.save
+    render :new
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     if @booking.destroy

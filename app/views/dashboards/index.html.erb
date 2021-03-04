@@ -21,7 +21,7 @@
 					<p>End: <%= booking.end_time.strftime("%Y-%m-%d")%></p>
 					<p>Total price: <%= booking.total_price%></p>
 					<div class="py-1">
-						<%= link_to 'Delete', booking_path(booking.id), method: :delete, data: {confirm: "Are you sure? :'("}, class: "btn btn-primary" %>
+						<%= link_to 'Delete', booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
 					</div>
 				</div>
       <% end %>
@@ -43,6 +43,10 @@
 				<p>End date: <%= offer.end_time.strftime("%Y-%m-%d")%></p>
 				<p>To User: <%= offer.user.email%></p>
 				<p>Total amount: <%= offer.total_price%></p>
+				<div>
+					<%= link_to 'Accept', booking_path(offer.id), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn-success" %>
+					<%= link_to 'Decline', booking_path(offer.id), method: :delete,  data: {confirm: "Are you sure this booking will be deleted?"}, class: "btn btn-danger" %>
+				</div>
 			</div>
 		<% end %>
 	</div>
