@@ -17,6 +17,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.pet = @pet
     @booking.user = current_user
+    # @booking.total_price = 
     if @booking.save
       redirect_to dashboards_path
     else
@@ -34,6 +35,10 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  # def total_price
+  #   (end_time - start_time).to_i  * pet.price
+  # end
 
   def set_booking
     @pet = Pet.find(params[:pet_id])
