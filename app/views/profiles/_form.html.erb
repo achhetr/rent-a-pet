@@ -1,0 +1,7 @@
+<%= simple_form_for @user do |f| %>
+  <%= f.input :name %>
+  <%= f.input :mobile %>
+  <%= f.input :location %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit %>
+<% end %>
