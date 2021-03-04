@@ -10,4 +10,9 @@ class Pet < ApplicationRecord
   validates :user_id, presence: true
   validates :name, presence: true
   validates :price, presence: true
+
+  # Pet Type
+  def self.all_type
+    %w(Dog Cat)
+  end
 end

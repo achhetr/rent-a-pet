@@ -1,4 +1,4 @@
-<%= simple_form_for @user, url: edit_profile_path do |f| %>
+<%= simple_form_for @user, url: profile_path(@user.id) do |f| %>
   <%= f.input :name %>
   <%= f.input :mobile %>
   <%= f.input :location %>

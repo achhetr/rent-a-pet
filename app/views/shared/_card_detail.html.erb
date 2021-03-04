@@ -8,6 +8,7 @@
 							<h5 class="card-title"><%= pet.name %></h5>
 								<div class="owner"><%= pet.user.name %></div>
 							<p class="card-text"><%= pet.description %></p>
+							<p class="card-text"><%= Geocoder.search("#{pet.user.location }, Australia").first.suburb%></p>
 							<p class="card-text"><small class="text-muted">$<%= pet.price %> / Day</small></p>
 						</div>
 					</div>
