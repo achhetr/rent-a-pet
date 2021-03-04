@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_03_04_000819) do
     t.bigint "pet_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "offer_accepted"
+    t.boolean "offer_accepted", default: false
     t.index ["pet_id"], name: "index_bookings_on_pet_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
