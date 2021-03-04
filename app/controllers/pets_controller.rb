@@ -1,13 +1,13 @@
 class PetsController < ApplicationController
 
   def index
-    if params.has_key?(:location)
+    if params[:location].nil?
       @pets = Pet.all
     else
       @pets = []
-      @users = User.near("#{params[:location]}, Australia", params[:distance].to_i)
+      @users = User.near("#{params[:location]}, Australia", params[:distance].to_i, order: :distance)
       @users.each do |user|
-        @pets << Pet.where(id: user.id)
+        @pets << Pet.where(user_id: user.id)
       end
       @pets.flatten!
     end         
