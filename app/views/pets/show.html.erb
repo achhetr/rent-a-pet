@@ -2,7 +2,7 @@
   <h1><strong>Pet Name</strong> <%= @pet.name %></h1>
   <p><strong>Descriptions:</strong> <%= @pet.description %></p>
   <p><strong>Animal Type</strong> <%= @pet.pet_type %></p>
-  <% if @pet.included? %>
+  <% if @pet.photo.attached? %>
     <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill, class: "img-thumbnail" %>  
   <% end %>
   <p><strong>Pet owner email</strong> <%= @pet.user.email %></p>
