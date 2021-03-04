@@ -1,4 +1,17 @@
-<form class="d-flex w-50 mx-auto" action=<%= pets_path %> method="GET">
-  <input class="form-control me-2" name="location" type="search" placeholder="Enter your Australian postcode" aria-label="Search">
-  <button class="btn btn-outline-success" type="submit">Search</button>
-</form>
+<div class="container">
+  <div class="row justify-content-center">
+    <%= link_to 'Add Pet', new_pet_path, class: "btn btn-info" %>
+    <form class="d-flex flex-grow-1" action=<%= pets_path %> method="GET">
+      <select class="form-control" id="sel1" name="distance">
+        <option value=10>Within 10 kms</option>
+        <option value=20>Within 20 kms</option>
+        <option value=50>Within 50 kms</option>
+        <option value=100>Show All</option>
+      </select>
+      <input class="form-control me-2" name="location" type="search" placeholder="Enter your Australian postcode" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</div>
+
+  

@@ -5,9 +5,9 @@ class PetsController < ApplicationController
       @pets = Pet.all
     else
       @pets = []
-      @users = User.near("#{params[:location]}, Australia")
+      @users = User.near("#{params[:location]}, Australia", params[:distance].to_i, order: :distance)
       @users.each do |user|
-        @pets << Pet.where(id: user.id)
+        @pets << Pet.where(user_id: user.id)
       end
       @pets.flatten!
       @markers = @users.geocoded.map do |user|
@@ -18,10 +18,6 @@ class PetsController < ApplicationController
         }
       end  
     end     
-  end
-
-  def query
-    parse
   end
     
   def destroy
