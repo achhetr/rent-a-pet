@@ -1,12 +1,13 @@
 <% if user_signed_in? %>
-  <div class="container">
-    <div class="navbar">
+  <div class="navbar">
+    <div class="container">
+    
       <div class="logo">
         <%= image_tag 'https://res.cloudinary.com/dddsdfpy5/image/upload/v1614644263/Orange_and_White_Dog_Walking_Service_Logo_flb6pz.png' %>
       </div>
       <ul>
         <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'Pets', pets_path %></li>
+        <li><%= link_to 'Find Pets', pets_path %></li>
         <li></li>
         <li><%= link_to 'Dashboard', dashboards_path %></li>
         <li>
@@ -18,11 +19,9 @@
               <%= link_to 'Profile', edit_profile_path(current_user.id), class: "dropdown-item" %>
               <%= link_to 'Settings', edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to 'Bookings', bookings_path, class: "dropdown-item" %>
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </div>
-        </li>
-        <li>
-          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
         </li>
         <li class="img-circle-container">
           <% if current_user.photo.attached? %>
