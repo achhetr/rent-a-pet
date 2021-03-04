@@ -1,7 +1,12 @@
 class PetsController < ApplicationController
 
   def index
-   @pets = Pet.all         
+    if params[:location].nil?
+      @pets = Pet.all
+    else
+      @users = User.near("#{params[:location]}, Australia")
+      parse
+    end         
   end
     
   def destroy
