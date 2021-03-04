@@ -3,7 +3,6 @@
 	<div>
 		<%= render 'shared/search_bar' %>
 	</div>
-<<<<<<< HEAD
 	<%= link_to 'Add Pet', new_pet_path %>
 	<div class ="main_container">
 	  <div class="pet_cards">
@@ -21,16 +20,3 @@
 				data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 	</div>
 </div>
-
-=======
-	<div class="pet_cards">
-		<ul>
-			<% @pets.each do |pet|  %>
-        <%= link_to pet_path(pet) do %>	
-        <%= render "shared/card_detail", pet: pet %>
-        <% end %>
-      <% end %>	
-		</ul>
-  </div>
-</div>
->>>>>>> edd61dc466bc9cd7c37a0945c8df96ac433dd94c
