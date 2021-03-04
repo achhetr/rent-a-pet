@@ -13,21 +13,36 @@
 
   <div class="row display:flex justify-content:space-between">
 		<div class="card" id="cards" style="width: 18rem;">
-			<img src="https://static.scientificamerican.com/sciam/cache/file/D059BC4A-CCF3-4495-849ABBAFAED10456_source.jpg?w=590&h=800&526ED1E1-34FF-4472-B348B8B4769AB2A1" class="card-img-top" alt="...">
+		  <div class="card-img-top" >
+			  <%= cl_image_tag(Pet.last(3).first.photo.key, height: 300, width: 400, crop: :fill) if Pet.last(3).first.photo.attached? %>
+        <% unless Pet.last(3).first.photo.attached? %>
+          <p>No photo attached</p>
+        <% end %>
+			</div>
 			<div class="card-body">
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+				<p class="card-text"><%= Pet.last(3).first[:description] %></p> 
 			</div>
 		</div>
 		<div class="card" id="cards" style="width: 18rem;">
-			<img src="https://static.scientificamerican.com/sciam/cache/file/D059BC4A-CCF3-4495-849ABBAFAED10456_source.jpg?w=590&h=800&526ED1E1-34FF-4472-B348B8B4769AB2A1" class="card-img-top" alt="...">
+			 <div class="card-img-top" >
+			  <%= cl_image_tag(Pet.last(1).first.photo.key, height: 300, width: 400, crop: :fill) if Pet.last(1).first.photo.attached? %>
+        <% unless Pet.last(1).first.photo.attached? %>
+          <p>No photo attached</p>
+        <% end %>
+			</div>
 			<div class="card-body">
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				<p class="card-text"><%= Pet.last(1).first[:description] %></p>
 			</div>
 		</div>
 		<div class="card" id="cards" style="width: 18rem;">
-			<img src="https://static.scientificamerican.com/sciam/cache/file/D059BC4A-CCF3-4495-849ABBAFAED10456_source.jpg?w=590&h=800&526ED1E1-34FF-4472-B348B8B4769AB2A1" class="card-img-top" alt="...">
+		  <div class="card-img-top" >
+			  <%= cl_image_tag(Pet.last(2).first.photo.key, cheight: 300, width: 400, crop: :fill) if Pet.last(2).first.photo.attached? %>
+        <% unless Pet.last(2).first.photo.attached? %>
+          <p>No photo attached</p>
+        <% end %>
+			</div>
 			<div class="card-body">
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				<p class="card-text"><%= Pet.last(2).first[:description] %></p>
 			</div>
 		</div>
 	</div>

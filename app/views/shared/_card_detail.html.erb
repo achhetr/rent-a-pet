@@ -1,7 +1,10 @@
 	<div class="card mb-3" style="max-width: 540px;">
 				<div class="row g-0">
 					<div class="col-md-4">
-						<img src="https://res.cloudinary.com/dddsdfpy5/image/upload/v1614767642/ya3a94nm1dry909c1ydzl32m1jfs.jpg" alt="...">
+						<%= cl_image_tag(pet.photo.key, height: 300, width: 400, crop: :fill) if pet.photo.attached? %>
+            <% unless pet.photo.attached? %>
+                <p>No photo attached</p>
+            <% end %>
 					</div>
 					<div class="col-md-8">
 						<div class="card-body">
