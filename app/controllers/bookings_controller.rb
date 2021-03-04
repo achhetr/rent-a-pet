@@ -25,6 +25,17 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.offer_accepted
+      @booking.offer_accepted = false
+    else
+      @booking.offer_accepted = true
+    end
+    @booking.save
+    redirect_to dashboards_path
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     if @booking.destroy
