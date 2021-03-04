@@ -7,22 +7,10 @@
 	<div class="pet_cards">
 		<ul>
 			<% @pets.each do |pet|  %>
-				<li class="list-unstyled">
-					<div class="border d-flex flex-column w-50 align-items-center my-4 p-3">
-						<%= link_to pet_path(pet.id) do %>
-							<h1><%= pet.name %></h1>
-						<% end %>
-						<p><strong>Description</strong> <%= pet.description %></p>
-						<p><strong>Pet Type</strong> <%= pet.pet_type %></p>
-						<p><strong>Owner</strong> <%= pet.user.email.split("@").first.upcase %></p>
-						<p><strong>Price</strong> $ <%= pet.price %> per day</p>
-						<% if pet.user.distance_from("3809, australia") > 0 %>
-							<p><strong>Distance </strong><%= pet.user.distance_from("3809, australia").round(2) %> Km</p>
-						<% end %>
-					</div>
-		<%= render "shared/card_detail", pet: pet%>
-		</li>	
-	<% end %>	
+        <%= link_to pet_path(pet) do %>	
+        <%= render "shared/card_detail", pet: pet %>
+        <% end %>
+      <% end %>	
 		</ul>
   </div>
 </div>

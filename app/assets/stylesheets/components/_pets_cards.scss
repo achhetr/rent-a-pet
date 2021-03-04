@@ -5,13 +5,13 @@
     // border-radius: 16px;
     // padding-top: 6px;
     // padding-bottom: 6px;
-    width: 80%;
-    height: 80%;
+    width: 95%;
+    height: 95%;
     object-fit: cover;
     border-radius: 16px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    margin-top: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 4px;
 }
 .card-text {
     text-align: right;
@@ -41,7 +41,7 @@
 }
 .text-muted {
     position: absolute;
-    bottom: 38px;
+    bottom: 12px;
     right: 20px;
     color: #00c4cc;
 }
@@ -50,4 +50,8 @@
 }
 .card {
     border-radius: 15px;
+}
+.owner {
+    font-weight:100;
+    opacity: 0.55;
 }
