@@ -19,3 +19,5 @@ class User < ApplicationRecord
   has_many :bookings, through: :pets
 
 end
+# Geocoder.search([-38.07, 145.355]).first.postal_code
+# Geocoder.search("#{postal_code}, Australia").first
