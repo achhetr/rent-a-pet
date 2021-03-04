@@ -1,60 +1,68 @@
-<div class="container"><h1><strong><%= current_user.email.split("@")[0].upcase%></strong> Dashboard</h1></div>
-	<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">My Booking</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">My Pets</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">My Offers</a>
-  </li>
-</ul>
-<div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-		<% @my_bookings.each do |booking|%>
-			<%= link_to booking_path(booking.id) do %>
-				<div class="border d-flex flex-column w-50 align-items-center my-4 pt-3">
-					<p>User Email: <%= booking.pet.user.email%></p>
-					<p>Pet: <%= booking.pet.name%></p>
-					<p>Start: <%= booking.start_time.strftime("%Y-%m-%d")%></p>
-					<p>End: <%= booking.end_time.strftime("%Y-%m-%d")%></p>
-					<p>Total price: <%= booking.total_price%></p>
-					<div class="py-1">
-						<%= link_to 'Delete', booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
+<div class="container">
+	<h1 class="text-center">
+		<strong><%= current_user.name.upcase%></strong> Dashboard
+	</h1>
+	<div class="offers-container">
+		<h3 class="text-center">My Current Offer's</h3>
+		
+		<% if @booking_offers.empty? %>
+			<p>No Current Offer</p>
+			<% else %>
+				<% @booking_offers.each do |offer|%>
+					<div class="border d-flex flex-column align-items-center my-2 pt-3">
+						<p>Renting pet: <%= offer.pet.name%></p>
+						<p>Start date: <%= offer.start_time.strftime("%Y-%m-%d")%></p>
+						<p>End date: <%= offer.end_time.strftime("%Y-%m-%d")%></p>
+						<p>To User: <%= offer.user.email%></p>
+						<p>Total amount: <%= offer.total_price%></p>
+						
+						<% if offer.offer_accepted %>
+							<strong>ACCEPTED <%= link_to 'Change', booking_path(offer.id), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %></strong>
+						<% else %>
+						<div>
+							<%= link_to 'Accept', booking_path(offer.id), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn-success" %>
+							<%= link_to 'Decline', booking_path(offer.id), method: :delete,  data: {confirm: "Are you sure this booking will be deleted?"}, class: "btn btn-danger" %>
+						</div>
+						<% end %>
+						
 					</div>
-				</div>
-      <% end %>
-		<% end %>
-	</div>
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-		<% @pets.each do |pet|%>
-			<p>Pet: 
-				<%= link_to pet_path(pet.id) do %>
-					<%= pet.name%></p>
 				<% end %>
-		<% end %>
-	</div>
-  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-		<% @booking_offers.each do |offer|%>
-			<div class="border d-flex flex-column w-50 align-items-center my-4 pt-3">
-				<p>Renting pet: <%= offer.pet.name%></p>
-				<p>Start date: <%= offer.start_time.strftime("%Y-%m-%d")%></p>
-				<p>End date: <%= offer.end_time.strftime("%Y-%m-%d")%></p>
-				<p>To User: <%= offer.user.email%></p>
-				<p>Total amount: <%= offer.total_price%></p>
-				
-				<% if offer.offer_accepted %>
-					<strong>ACCEPTED <%= link_to 'Change', booking_path(offer.id), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %></strong>
+			<% end %>
+		</div>
+	<div class="dashboard-bottom-container">
+		<div class="bottom-pet-container">
+			<h3 class="text-center">My Pets</h3>
+			<div class="pet-container">
+				<% if @pets.empty? %>
+					<p>You don't have any pets</p>
 				<% else %>
-				<div>
-					<%= link_to 'Accept', booking_path(offer.id), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn-success" %>
-					<%= link_to 'Decline', booking_path(offer.id), method: :delete,  data: {confirm: "Are you sure this booking will be deleted?"}, class: "btn btn-danger" %>
-				</div>
+					<% @pets.each do |pet|%>
+						<p>Pet: 
+							<%= link_to pet_path(pet.id) do %>
+								<%= pet.name%></p>
+							<% end %>
+					<% end %>
 				<% end %>
-				
 			</div>
-		<% end %>
+			</div>
+			<div class="bottom-bookings-container">
+			<h3 class="text-center">Bookings</h3>
+			<div class="bookings-container">
+			<% @my_bookings.each do |booking|%>
+				<%= link_to booking_path(booking.id) do %>
+					<div class="border d-flex flex-column align-items-center p-2">
+						<p>User Email: <%= booking.pet.user.email%></p>
+						<p>Pet: <%= booking.pet.name%></p>
+						<p>Start: <%= booking.start_time.strftime("%Y-%m-%d")%></p>
+						<p>End: <%= booking.end_time.strftime("%Y-%m-%d")%></p>
+						<p>Total price: <%= booking.total_price%></p>
+						<div class="py-1">
+							<%= link_to 'Delete', booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+			</div>
+			</div>
 	</div>
-</div>
-
+	</div>

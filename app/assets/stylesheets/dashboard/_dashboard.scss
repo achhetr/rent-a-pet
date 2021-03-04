@@ -1,0 +1,83 @@
+.offers-container {
+    background: gray;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    overflow-y: scroll;
+    max-height: 400px;
+    flex-wrap: wrap;
+
+    .offer-item {
+        height: 200px;
+        width: 130px;
+        background: white;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+}
+
+.offers-container::after {
+        content: '';
+  min-width: 1px;
+
+    }
+
+.dashboard-bottom-container {
+    display: flex;
+}
+
+.bottom-pet-container{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-bookings-container {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pet-container,
+.booking-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+// .bookings-container {
+//     display: flex;
+//     flex-direction: column;
+//     background: #00c4cc;
+//     height: 400px;
+//     width: 50%;
+
+//     .booking-item {
+//         height: 160px;
+//         width: 140px;
+//         background: white;
+//         margin-right: 6px;
+//         flex-shrink: 0;
+//     }
+// }
+// .pets-container {
+//     display: flex;
+//     flex-direction: column;
+//     background: red;
+//     height: 400px;
+//     width: 50%;
+    
+
+//     .pet-item {
+//         height: 160px;
+//         width: 140px;
+//         background: white;
+//         margin-right: 6px;
+//         flex-shrink: 0;
+//     }
+// }
