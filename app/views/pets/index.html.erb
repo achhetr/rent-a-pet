@@ -16,8 +16,9 @@
 						<p><strong>Pet Type</strong> <%= pet.pet_type %></p>
 						<p><strong>Owner</strong> <%= pet.user.email.split("@").first.upcase %></p>
 						<p><strong>Price</strong> $ <%= pet.price %> per day</p>
-						<%# if pet.distance > 0 %>
-						<%# end %>
+						<% if pet.user.distance_from("3809, australia") > 0 %>
+							<p><strong>Distance </strong><%= pet.user.distance_from("3809, australia").round(2) %> Km</p>
+						<% end %>
 					</div>
 		<%= render "shared/card_detail", pet: pet%>
 		</li>	

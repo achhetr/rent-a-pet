@@ -4,8 +4,12 @@ class PetsController < ApplicationController
     if params[:location].nil?
       @pets = Pet.all
     else
+      @pets = []
       @users = User.near("#{params[:location]}, Australia")
-      parse
+      @users.each do |user|
+        @pets << Pet.where(id: user.id)
+      end
+      @pets.flatten!
     end         
   end
     
