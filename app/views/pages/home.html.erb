@@ -14,7 +14,7 @@
   <div class="row display:flex justify-content:space-between">
 		<div class="card" id="cards" style="width: 18rem;">
 		  <div class="card-img-top" >
-			  <%= cl_image_tag(Pet.last(3).first.photo.key, height: 300, width: 400, crop: :fill) if Pet.last(3).first.photo.attached? %>
+			  <%= cl_image_tag(Pet.last(3).first.photo.key, height: 250, width: 286, crop: :fill) if Pet.last(3).first.photo.attached? %>
         <% unless Pet.last(3).first.photo.attached? %>
           <p>No photo attached</p>
         <% end %>
@@ -25,7 +25,7 @@
 		</div>
 		<div class="card" id="cards" style="width: 18rem;">
 			 <div class="card-img-top" >
-			  <%= cl_image_tag(Pet.last(1).first.photo.key, height: 300, width: 400, crop: :fill) if Pet.last(1).first.photo.attached? %>
+			  <%= cl_image_tag(Pet.last(1).first.photo.key, height: 250, width: 286, crop: :fill) if Pet.last(1).first.photo.attached? %>
         <% unless Pet.last(1).first.photo.attached? %>
           <p>No photo attached</p>
         <% end %>
@@ -36,7 +36,7 @@
 		</div>
 		<div class="card" id="cards" style="width: 18rem;">
 		  <div class="card-img-top" >
-			  <%= cl_image_tag(Pet.last(2).first.photo.key, cheight: 300, width: 400, crop: :fill) if Pet.last(2).first.photo.attached? %>
+			  <%= cl_image_tag(Pet.last(2).first.photo.key, height: 250, width: 286, crop: :fill) if Pet.last(2).first.photo.attached? %>
         <% unless Pet.last(2).first.photo.attached? %>
           <p>No photo attached</p>
         <% end %>
