@@ -7,7 +7,7 @@ class PetsController < ApplicationController
       @pets = []
       @users = User.near("#{params[:location]}, Australia", params[:distance].to_i, order: :distance)
       @users.each do |user|
-        @pets << Pet.where(id: user.id)
+        @pets << Pet.where(user_id: user.id)
       end
       @pets.flatten!
     end         
