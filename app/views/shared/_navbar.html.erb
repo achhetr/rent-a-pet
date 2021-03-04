@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container width">
   <div class="navbar">
     <div class="logo">
       <%= image_tag 'https://res.cloudinary.com/dddsdfpy5/image/upload/v1614644263/Orange_and_White_Dog_Walking_Service_Logo_flb6pz.png' %>
@@ -12,7 +12,7 @@
         
         <% if user_signed_in? %>
           <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-primary dropdown-toggle m-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= current_user.email.split('@').first.upcase %>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -31,7 +31,7 @@
         <% end %>
       </li>
       <% if user_signed_in? %>
-        <li class="img-circle-container">
+        <li class="img-circle-container m-3">
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, class: "img-profile"%> 
           <% else %>

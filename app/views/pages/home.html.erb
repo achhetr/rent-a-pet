@@ -1,14 +1,17 @@
 <div class="container_home">
-	<div class="banner"></div>
-	<h1>Rent a Pet today :)</h1>
+	<div class="banner" style="background-image: url(https://www.marchioro.it/images/banner_pet.jpg);">
+    <div class="container">
+	  <h1>Rent-A-Pet</h1>
 	
-	<% unless  user_signed_in? %>
-		<div class="try_button">
-			<%= link_to 'Try Us Now', new_user_registration_path, class: "btn btn-primary btn-lg", id: "front_button" %>
-		</div>
-	<% end %>
+	   <% unless  user_signed_in? %>
+		  <div class="try_button">
+			  <%= link_to 'Try Us Now', new_user_registration_path, class: "btn btn-primary btn-lg", id: "front_button" %>
+		  </div>
+	   <% end %>
+    </div>
+  </div>
 
-	<div class="row display:flex justify-content:space-between">
+  <div class="row display:flex justify-content:space-between">
 		<div class="card" id="cards" style="width: 18rem;">
 			<img src="https://static.scientificamerican.com/sciam/cache/file/D059BC4A-CCF3-4495-849ABBAFAED10456_source.jpg?w=590&h=800&526ED1E1-34FF-4472-B348B8B4769AB2A1" class="card-img-top" alt="...">
 			<div class="card-body">
