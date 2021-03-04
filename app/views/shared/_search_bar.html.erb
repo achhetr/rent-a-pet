@@ -2,7 +2,6 @@
   <div class="row justify-content-center">
     <%= link_to 'Add Pet', new_pet_path, class: "btn btn-info" %>
     <form class="d-flex flex-grow-1" action=<%= pets_path %> method="GET">
-      <label for="sel1">Select Distance:</label>
       <select class="form-control" id="sel1" name="distance">
         <option value=10>Within 10 kms</option>
         <option value=20>Within 20 kms</option>
