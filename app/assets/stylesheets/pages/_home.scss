@@ -22,3 +22,21 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
+
+.bg-image {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  opacity: 0.9;
+}
+
+h1 {
+  margin: 10;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+  font-size: 58px;
+  font-weight: bold;
+  text-align: center;
+}

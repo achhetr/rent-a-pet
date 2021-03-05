@@ -1,17 +1,20 @@
-<div class="container_home">
-	<div class="banner" style="background-image: url(https://www.marchioro.it/images/banner_pet.jpg);">
-    <div class="container">
-	    <h1>Rent-A-Pet</h1>
-	  
-      <% unless  user_signed_in? %>
-		   <div class="try_button">
-			   <%= link_to 'Try Us Now', new_user_registration_path, class: "btn btn-primary btn-lg", id: "front_button" %>
-		   </div>
-	    <% end %>
+<div class="bg-image" style="background-image: url(https://images.unsplash.com/photo-1534361960057-19889db9621e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YW5pbWFsJTIwcnVufGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80);
+   height: 100vh; ">
+	<div class="container d-flex h-100 align-items-center">
+	  <div class="mx-auto text-center">
+	    <h1 mx-auto my-0 text-uppercase>Rent A Pet</h1>
 		</div>
-  </div>
-
-  <div class="row display:flex justify-content:space-between">
+	</div>
+	  
+  <% unless  user_signed_in? %>
+		<div class="try_button">
+			<%= link_to 'Try Us Now', new_user_registration_path, class: "btn btn-primary btn-lg", id: "front_button" %>
+		</div>
+	<% end %>
+</div>
+ 
+<div class="container_home">
+  <div class="display:flex justify-content:space-evenly">
 		<div class="card" id="cards" style="width: 18rem;">
 		  <div class="card-img-top" >
 			  <%= cl_image_tag(Pet.last(3).first.photo.key, height: 250, width: 286, crop: :fill) if Pet.last(3).first.photo.attached? %>
@@ -46,4 +49,4 @@
 			</div>
 		</div>
 	</div>
- </div>
+</div>
