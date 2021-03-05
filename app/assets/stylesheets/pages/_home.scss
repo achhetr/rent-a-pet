@@ -1,63 +1,62 @@
 // Specific CSS for your home-page
 #front_button {
-    background-color: #00c4cc;
-    color: #ffffff;
-    border-radius: 15px;
-    border-color: #00c4cc;
+	background-color: #00c4cc;
+	color: #ffffff;
+	border-radius: 15px;
+	border-color: #00c4cc;
 }
 
-.container {
-  padding-top: 70px;
+.cd-container {
+	padding-top: 70px;
 
-    h2 {
-      color:black;
-    }
+	h2 {
+		color: black;
+	}
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: 10px;
-    margin-left: 10px;
-    justify-content: space-between;
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: 10px;
+	margin-left: 10px;
+	justify-content: space-between;
 }
 #cards {
-    border-radius: 15px;
-    margin-top: 15px;
-    
+	border-radius: 15px;
+	margin-top: 15px;
 }
 .card-img-top {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
 }
 
 .bg-image {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width: 100%;
-  opacity: 0.9;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	width: 100%;
+	opacity: 0.9;
 }
 
 h1 {
-  margin: 10;
-  color: white;
-  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
-  font-size: 58px;
-  text-align: center;
-  font-family: 'Varela Round';
+	margin: 10;
+	color: white;
+	text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+	font-size: 58px;
+	text-align: center;
+	font-family: 'Varela Round';
 }
 
-h2{
-  color: white;
-  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+h2 {
+	color: white;
+	text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
 }
 
 .card-text {
-  text-align: center; 
+	text-align: center;
 }
 
 .card-body {
-  text-align: center;
+	text-align: center;
 }
