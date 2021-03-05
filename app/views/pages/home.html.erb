@@ -2,7 +2,8 @@
    height: 100vh; ">
 	<div class="container d-flex h-100 align-items-center">
 	  <div class="mx-auto text-center">
-	    <h1 mx-auto my-0 text-uppercase>Rent A Pet</h1>
+	    <h1 mx-auto my-0 >RENT A PET</h1>
+			 <h2 text-white-50 mx-auto mt-2 mb-5>Rent a pet today</h2>
 		</div>
 	</div>
 	  
@@ -13,8 +14,8 @@
 	<% end %>
 </div>
  
-<div class="container_home">
-  <div class="display:flex justify-content:space-evenly">
+<div class="container_home ">
+  <div class="row display: flex justify-content: space-evenly">
 		<div class="card" id="cards" style="width: 18rem;">
 		  <div class="card-img-top" >
 			  <%= cl_image_tag(Pet.last(3).first.photo.key, height: 250, width: 286, crop: :fill) if Pet.last(3).first.photo.attached? %>
