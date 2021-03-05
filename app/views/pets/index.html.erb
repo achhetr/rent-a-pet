@@ -3,7 +3,7 @@
 	<div>
 		<%= render 'shared/search_bar' %>
 	</div>
-	<div class ="main_container">
+	<div class ="info_container">
 		<div class="pet_cards">
 			<ul>
 				<% @pets.each do |pet|  %>
@@ -16,7 +16,7 @@
 		<div id="map"
 				style="width: 500px; height: 650px;"
 				data-markers="<%= @markers.to_json %>"
-				data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+				data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 		</div>
 	</div>
 </div>
