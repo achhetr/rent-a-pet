@@ -4,12 +4,12 @@
 		<%= render 'shared/search_bar' %>
 	</div>
 	<div class ="info_container">
-		<div class="pet_cards">
+		<div class="cards">
 				<% @pets.each do |pet|  %>
-					<%= link_to pet_path(pet) do %>	
-					<%= render "shared/card_detail", pet: pet %>
+					<%# link_to pet_path(pet) do %>	
+						<%= render "shared/card_detail", pet: pet %>
 					<% end %>
-				<% end %>	
+				<%# end %>	
 		</div>
 		<div id="map"
 				style="width: 500px; height: 650px;"

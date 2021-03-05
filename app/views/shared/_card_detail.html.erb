@@ -1,39 +1,20 @@
-<!--	
-	<div class="card mb-3">
-				<div class="row g-0">
-					<div class="col-md-4">
-						<%= cl_image_tag(pet.photo.key, height: 300, width: 400, crop: :fill) if pet.photo.attached? %>
-            <% unless pet.photo.attached? %>
-                <p>No photo attached</p>
-            <% end %>
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h5 class="card-title"><%= pet.name %></h5>
-								<div class="owner"><%= pet.user.name %></div>
-							<p class="card-text"><%= pet.description %></p>
-							<p class="card-text"><%= Geocoder.search("#{pet.user.location }, Australia").first.suburb%></p>
-							<p class="card-text"><small class="text-muted">$<%= pet.price %> / Day</small></p>
-						</div>
-					</div>
-				</div>
+<div class="card">
+	<div class="card-row">
+		<% if pet.photo.attached? %>
+			<%= cl_image_tag(pet.photo.key) %>
+		<% else %>
+			<p>No photo attached</p>
+		<% end %>
+		<div class="card-body">
+			<div class="card-headers">
+				<h3><%= pet.name %></h3>
+				<p><%= pet.user.location %></p>
 			</div>
-
--->
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <%= cl_image_tag(pet.photo.key, height: 300, width: 400, crop: :fill) if pet.photo.attached? %>
-            <% unless pet.photo.attached? %>
-                <p>No photo attached</p>
-            <% end %>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
+			<p class="card-description"><%= pet.description %></p>
+			<div class="card-bottom">
+				<%= link_to 'Rent Pet', pet_path(pet), class: "card-link" %>
+				<p class="text-muted">$ <%= pet.price %> / day</p>
+			</div>
+		</div>
+	</div>
 </div>
