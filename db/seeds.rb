@@ -14,12 +14,11 @@
 # 20 Pets
 20.times do 
   hash = {
-    name: Faker::Name.name, 
+    name: Faker::Creature::Dog.name, 
     pet_type: ["Dog", "Cat"].sample, 
-    description: Faker::Alphanumeric.alpha(number: 50), 
-    image_url: Faker::Alphanumeric.alpha(number: 10), 
-    price: rand(6..100),
-    user_id: rand(1..User.count)
+    description: Faker::Quotes::Rajnikanth.joke, 
+    price: rand(25..100),
+    user_id: rand(1..3)
   }
   Pet.create(hash)
 end
