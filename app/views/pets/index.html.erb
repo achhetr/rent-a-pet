@@ -5,11 +5,9 @@
 	</div>
 	<div class ="info_container">
 		<div class="cards">
-				<% @pets.each do |pet|  %>
-					<%# link_to pet_path(pet) do %>	
-						<%= render "shared/card_detail", pet: pet %>
-					<% end %>
-				<%# end %>	
+			<% @pets.each do |pet|  %>
+				<%= render "shared/card_detail", pet: pet %>
+			<% end %>
 		</div>
 		<div id="map"
 				style="width: 500px; height: 650px;"
@@ -18,4 +16,3 @@
 		</div>
 	</div>
 </div>
-
