@@ -3,6 +3,7 @@ class PetsController < ApplicationController
   def index
     if params[:location].nil?
       @pets = Pet.all
+      @users = User.all
     else
       @pets = []
       @users = User.near("#{params[:location]}, Australia", params[:distance].to_i, order: :distance)
@@ -10,13 +11,13 @@ class PetsController < ApplicationController
         @pets << Pet.where(user_id: user.id)
       end
       @pets.flatten!
-      @markers = @users.geocoded.map do |flat|
-        {
-          lat: flat.latitude,
-          lng: flat.longitude
-        }
-      end 
     end     
+    @markers = @users.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end 
   end
     
   def destroy
