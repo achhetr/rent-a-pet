@@ -5,13 +5,11 @@
 	</div>
 	<div class ="info_container">
 		<div class="pet_cards">
-			<ul>
 				<% @pets.each do |pet|  %>
 					<%= link_to pet_path(pet) do %>	
 					<%= render "shared/card_detail", pet: pet %>
 					<% end %>
 				<% end %>	
-			</ul>
 		</div>
 		<div id="map"
 				style="width: 500px; height: 650px;"
