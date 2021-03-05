@@ -48,23 +48,23 @@
 			</div>
 			</div>
 			<div class="bottom-bookings-container">
-			<h3 class="text-center">Bookings</h3>
-			<div class="bookings-container">
-			<% @my_bookings.each do |booking|%>
-				<%= link_to booking_path(booking.id) do %>
-					<div class="border d-flex flex-column align-items-center p-2">
-						<p>User Email: <%= booking.pet.user.email%></p>
-						<p>Pet: <%= booking.pet.name%></p>
-						<p>Start: <%= booking.start_time.strftime("%Y-%m-%d")%></p>
-						<p>End: <%= booking.end_time.strftime("%Y-%m-%d")%></p>
-						<p>Total price: <%= booking.total_price%></p>
-						<div class="py-1">
-							<%= link_to 'Delete', booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
-						</div>
-					</div>
-				<% end %>
-			<% end %>
-			</div>
+				<h3 class="text-center">Bookings</h3>
+				<div class="bookings-container">
+					<% @my_bookings.each do |booking|%>
+						<%= link_to booking_path(booking.id) do %>
+							<div class="border d-flex flex-column align-items-center p-2">
+								<p>User Email: <%= booking.pet.user.email%></p>
+								<p>Pet: <%= booking.pet.name%></p>
+								<p>Start: <%= booking.start_time.strftime("%Y-%m-%d")%></p>
+								<p>End: <%= booking.end_time.strftime("%Y-%m-%d")%></p>
+								<p>Total price: <%= booking.total_price%></p>
+								<div class="py-1">
+									<%= link_to 'Delete', booking_path(booking.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
+								</div>
+							</div>
+						<% end %>
+					<% end %>
+				</div>
 			</div>
 	</div>
 	</div>
