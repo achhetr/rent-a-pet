@@ -8,8 +8,8 @@
         <p><strong>Owned by: </strong><%= booking.pet.user.email.split("@").first.upcase %></p>
         <p><strong>Start date: </strong><%= booking.start_time.strftime("%Y-%m-%d") %></p>
         <p><strong>End date: </strong><%= booking.end_time.strftime("%Y-%m-%d") %></p>
-        <p><strong>Total Price: </strong><%= booking.total_price %></p>    
-        <p><strong><%= booking.total_price ? 'ACCEPTED' : 'PENDING'%></strong></p>    
+        <p><strong>Total Price: </strong><%= booking.total_price %></p>   
+        <p><strong><%= booking.offer_accepted ? 'ACCEPTED' : 'PENDING'%></strong></p>    
       </div>
     </li>
   <% end %>  
