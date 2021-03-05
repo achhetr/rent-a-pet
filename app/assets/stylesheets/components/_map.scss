@@ -1,26 +1,37 @@
 .mapboxgl-popup {
-  max-width: 200px;
+	max-width: 200px;
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .main_container {
-  display: flex;
+	display: flex;
 }
 #map {
-  /* width: 100%; */
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  margin-left: 10px;
+	/* width: 100%; */
+	position: sticky;
+	top: 0;
+	height: 100vh;
+	margin-left: 10px;
 }
 
 .pet_cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 16px;
-  flex-grow: 1;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 16px;
+	flex-grow: 1;
+}
+
+.popup-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+
+	p {
+		font-weight: bold;
+	}
 }
