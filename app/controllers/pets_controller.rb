@@ -12,10 +12,11 @@ class PetsController < ApplicationController
       end
       @pets.flatten!
     end     
-    @markers = @users.geocoded.map do |user| {
-      lat: user.latitude,
-      lng: user.longitude,
-      infoWindow: render_to_string(partial: "infowindow", locals: { user: user })
+    @markers = @users.geocoded.map do |user|     
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { user: user })
       }
     end 
   end
