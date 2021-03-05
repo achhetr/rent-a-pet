@@ -19,11 +19,11 @@
 						<p>Total amount: <%= offer.total_price%></p>
 						
 						<% if offer.offer_accepted %>
-							<strong>ACCEPTED <%= link_to 'Change', booking_path(offer.id), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %></strong>
+							<strong>ACCEPTED <%= link_to 'Change', booking_path(offer.id), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn-danger", reload: true %></strong>
 						<% else %>
 						<div>
-							<%= link_to 'Accept', booking_path(offer.id), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn-success" %>
-							<%= link_to 'Decline', booking_path(offer.id), method: :delete,  data: {confirm: "Are you sure this booking will be deleted?"}, class: "btn btn-danger" %>
+							<%= link_to 'Accept', booking_path(offer.id), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn-success", reload: true%>
+							<%= link_to 'Decline', booking_path(offer.id), method: :delete,  data: {confirm: "Are you sure this booking will be deleted?"}, class: "btn btn-danger", reload: true %>
 						</div>
 						<% end %>
 						
