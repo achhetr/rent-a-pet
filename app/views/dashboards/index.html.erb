@@ -2,14 +2,16 @@
 	<h1 class="text-center">
 		<strong><%= current_user.name.upcase%></strong> Dashboard
 	</h1>
+		<div class="current-offers-heading-container">
+			<h3 class="text-center">My Current Offer's</h3>
+		</div>	
+
 	<div class="offers-container">
-		<h3 class="text-center">My Current Offer's</h3>
-		
-		<% if @booking_offers.empty? %>
+			<% if @booking_offers.empty? %>
 			<p>No Current Offer</p>
 			<% else %>
 				<% @booking_offers.each do |offer|%>
-					<div class="border d-flex flex-column align-items-center my-2 pt-3">
+					<div class="border d-flex flex-column align-items-center my-2 pt-3 offers-card">
 						<p>Renting pet: <%= offer.pet.name%></p>
 						<p>Start date: <%= offer.start_time.strftime("%Y-%m-%d")%></p>
 						<p>End date: <%= offer.end_time.strftime("%Y-%m-%d")%></p>
