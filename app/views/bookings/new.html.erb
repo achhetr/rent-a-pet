@@ -1,5 +1,5 @@
-<h1>Bookings</h1>
-<p><%= @pet.name %></p>
+<h1 class="text-center my-3">Booking</h1>
+<p class="text-center my-1 booking-pet__name"><%= @pet.name %></p>
 
 <%= simple_form_for [@pet, @booking] do |f| %>
   <%= f.input:start_time, as: :date, min: Date.today, html5: true %>

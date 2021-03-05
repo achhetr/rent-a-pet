@@ -1,5 +1,6 @@
 // New Pet Form
-.simple_form.new_pet {
+.simple_form.new_pet,
+.simple_form.new_booking {
 	box-shadow: 2px 2px 2px 4px lightgray;
 	display: flex;
 	flex-direction: column;
@@ -55,4 +56,15 @@
 
 label {
 	color: rgba(98, 131, 134, 0.972);
+}
+
+.new_booking {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.booking-pet__name {
+	font-size: 50px;
+	font-weight: 100;
+	font-family: 'Montserrat', sans-serif;
 }
