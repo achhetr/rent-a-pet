@@ -18,6 +18,10 @@ class User < ApplicationRecord
   has_many :pets, dependent: :destroy
   has_many :bookings, through: :pets
 
+  def self.pet_counter(id)
+    Pet.where(user_id: id).count
+  end
+
 end
 # Geocoder.search([-38.07, 145.355]).first.postal_code
 # Geocoder.search("#{postal_code}, Australia").first
