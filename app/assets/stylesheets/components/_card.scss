@@ -1,16 +1,19 @@
 .cards {
 	width: 100%;
+	margin-right: 8px;
 }
 
 .card {
 	border-radius: 8px;
 	overflow: hidden;
+	box-shadow: 2px 1px 2px #e8e8e8;
+	margin-bottom: 24px;
 }
 
 .card-row {
 	display: flex;
 	img {
-		height: 150px;
+		height: 200px;
 	}
 }
 
@@ -28,10 +31,11 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	margin-left: 8px;
+	margin: 8px 4px;
 	padding: 4px 6px;
 	.card-description {
-		height: 50px;
+		height: 100px;
+		margin-right: 8px;
 		overflow: hidden;
 	}
 	p {
