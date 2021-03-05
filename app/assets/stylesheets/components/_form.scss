@@ -6,7 +6,6 @@
 	align-items: center;
 	margin-top: 36px;
 	padding: 16px 32px;
-	label,
 	.pet_photo {
 		color: rgba(98, 131, 134, 0.972);
 	}
@@ -52,4 +51,8 @@
 			background-color: rgb(51, 147, 207);
 		}
 	}
+}
+
+label {
+	color: rgba(98, 131, 134, 0.972);
 }
