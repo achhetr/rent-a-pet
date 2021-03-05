@@ -1,3 +1,7 @@
-<h3><%= user.name %></h3>
-<h3><%= User.pet_counter(user.id) %></h3>
-<p><%= user.location %></p>
+<div class="popup-container">
+  <p>Owner - <%= user.name.upcase %></p>
+  <% if User.pet_counter(user.id).positive? %>
+    <p>Pets - <%= User.pet_counter(user.id) %></p>  
+  <% end %>
+  <p>Location - <%= user.location.upcase %></p>
+</div>
