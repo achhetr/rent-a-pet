@@ -11,6 +11,9 @@
 #   User.create(email: Faker::Internet.email, name: Faker::Name.name, location: Faker::Address.city, password: Faker::Alphanumeric.alpha(number: 10))
 # end
 
+# user 
+User.create(email: 'akash@gmail.com', password: '123456', name: 'Akash');
+
 # 20 Pets
 20.times do 
   hash = {
@@ -18,7 +21,7 @@
     pet_type: ["Dog", "Cat"].sample, 
     description: Faker::Quotes::Rajnikanth.joke, 
     price: rand(25..100),
-    user_id: rand(1..3)
+    user_id: 1
   }
   Pet.create(hash)
 end
