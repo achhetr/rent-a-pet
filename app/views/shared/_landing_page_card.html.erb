@@ -1,0 +1,12 @@
+<div class="card" id="cards" style="width: 18rem;">
+  <div class="card-img-top" >
+    <% if pet.photo.attached? %>
+      <%= cl_image_tag(pet.photo.key, height: 250, width: 286, crop: :fill)%>
+    <% else %>
+      <%= cl_image_tag('https://res.cloudinary.com/dddsdfpy5/image/upload/v1614909966/default_profile_REP_niiyts.jpg', height: 250, width: 286, crop: :fill) %>
+    <% end %>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= pet[:name] %></p> 
+  </div>
+</div>

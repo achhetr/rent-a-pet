@@ -16,38 +16,8 @@
 <div class="cd-container container">
   <h2>Recently added pets</h2>
   <div class="row display: flex justify-content: space-evenly">
-		<div class="card" id="cards" style="width: 18rem;">
-		  <div class="card-img-top" >
-			  <%= cl_image_tag(Pet.last(3).first.photo.key, height: 250, width: 286, crop: :fill) if Pet.last(3).first.photo.attached? %>
-        <% unless Pet.last(3).first.photo.attached? %>
-          <p>No photo attached</p>
-        <% end %>
-			</div>
-			<div class="card-body">
-				<p class="card-text"><%= Pet.last(3).first[:name] %></p> 
-			</div>
-		</div>
-		<div class="card" id="cards" style="width: 18rem;">
-			 <div class="card-img-top" >
-			  <%= cl_image_tag(Pet.last(1).first.photo.key, height: 250, width: 286, crop: :fill) if Pet.last(1).first.photo.attached? %>
-        <% unless Pet.last(1).first.photo.attached? %>
-          <p>No photo attached</p>
-        <% end %>
-			</div>
-			<div class="card-body">
-				<p class="card-text"><%= Pet.last(1).first[:name] %></p>
-			</div>
-		</div>
-		<div class="card" id="cards" style="width: 18rem;">
-		  <div class="card-img-top" >
-			  <%= cl_image_tag(Pet.last(2).first.photo.key, height: 250, width: 286, crop: :fill) if Pet.last(2).first.photo.attached? %>
-        <% unless Pet.last(2).first.photo.attached? %>
-          <p>No photo attached</p>
-        <% end %>
-			</div>
-			<div class="card-body">
-				<p class="card-text"><%= Pet.last(2).first[:name] %></p>
-			</div>
-		</div>
+		<% Pet.all.last(3).each do |pet| %>
+			<%= render 'shared/landing_page_card', pet: pet %>
+		<% end %>
 	</div>
 </div>
