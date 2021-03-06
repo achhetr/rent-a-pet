@@ -5,15 +5,14 @@ class PetsController < ApplicationController
       @pets = Pet.all
       @users = User.all
     else
-      @pets = []
       @users = User.near("#{params[:location]}, Victoria, Australia", params[:distance].to_i, order: :distance)
       @users.each do |user|
         @pets << Pet.where(user_id: user.id)
       end
       @pets.flatten!
     end     
-    @pets.reject { |pet| pet.user_id != current_user}
-    @markers = @users.geocoded.map do |user|     
+    pets_with_different_owner
+    @markers = @users.geocoded.map do |user|  
       {
         lat: user.latitude,
         lng: user.longitude,
@@ -65,4 +64,7 @@ class PetsController < ApplicationController
     params.require(:pet).permit(:name, :description, :pet_type, :photo, :image_url, :price)
   end
 
+  def pets_with_different_owner
+    @pets = @pets.reject { |pet| pet.user_id == current_user.id}
+  end
 end
