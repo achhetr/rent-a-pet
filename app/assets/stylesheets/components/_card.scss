@@ -13,7 +13,7 @@
 .card-row {
 	display: flex;
 	img {
-		height: 200px;
+		height: 100%;
 	}
 }
 
@@ -25,6 +25,11 @@
 		padding-bottom: 2px;
 		border-bottom: 2px solid lightgray;
 	}
+}
+
+.card-img-container {
+	width: 200px;
+	height: 200px;
 }
 
 .card-body {

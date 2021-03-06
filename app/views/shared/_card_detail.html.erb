@@ -1,10 +1,12 @@
 <div class="card">
 	<div class="card-row">
-		<% if pet.photo.attached? %>
-			<%= cl_image_tag(pet.photo.key) %>
-		<% else %>
-			<%= cl_image_tag('https://res.cloudinary.com/dddsdfpy5/image/upload/v1614909966/default_profile_REP_niiyts.jpg') %>
-		<% end %>
+		<div class="card-img-container">
+			<% if pet.photo.attached? %>
+				<%= cl_image_tag(pet.photo.key) %>
+			<% else %>
+				<%= cl_image_tag('https://res.cloudinary.com/dddsdfpy5/image/upload/v1614909966/default_profile_REP_niiyts.jpg') %>
+			<% end %>
+		</div>
 		<div class="card-body">
 			<div class="card-headers">
 				<h3><%= pet.name %></h3>
