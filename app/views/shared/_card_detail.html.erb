@@ -1,13 +1,13 @@
 <div class="card">
-	<div class="card-row">
-		<div class="card-img-container">
+	<div class="card-row row no-gutters">
+		<div class="col-sm-4 m-0">
 			<% if pet.photo.attached? %>
 				<%= cl_image_tag(pet.photo.key) %>
 			<% else %>
 				<%= cl_image_tag('https://res.cloudinary.com/dddsdfpy5/image/upload/v1614909966/default_profile_REP_niiyts.jpg') %>
 			<% end %>
 		</div>
-		<div class="card-body">
+		<div class="col-sm-8 card-body">
 			<div class="card-headers">
 				<h3><%= pet.name %></h3>
 				<p><%= pet.user.location %></p>
