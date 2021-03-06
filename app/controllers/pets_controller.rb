@@ -12,6 +12,7 @@ class PetsController < ApplicationController
       end
       @pets.flatten!
     end     
+    @pets.reject { |pet| pet.user_id != current_user}
     @markers = @users.geocoded.map do |user|     
       {
         lat: user.latitude,
