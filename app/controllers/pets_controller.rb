@@ -5,6 +5,7 @@ class PetsController < ApplicationController
       @pets = Pet.all
       @users = User.all
     else
+      @pets = []
       @users = User.near("#{params[:location]}, Victoria, Australia", params[:distance].to_i, order: :distance)
       @users.each do |user|
         @pets << Pet.where(user_id: user.id)
